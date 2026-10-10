@@ -27,4 +27,10 @@ public class SalleDao extends GenericDao<Salle> {
                 .setParameter("minCapacite", minCapacite)
                 .getResultList();
     }
+
+    public List<Salle> findByBatiment(String batiment) {
+        return em.createQuery("SELECT s FROM Salle s WHERE s.batiment = :batiment", Salle.class)
+                .setParameter("batiment", batiment)
+                .getResultList();
+    }
 }

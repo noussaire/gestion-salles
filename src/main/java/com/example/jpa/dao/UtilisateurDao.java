@@ -21,4 +21,10 @@ public class UtilisateurDao extends GenericDao<Utilisateur> {
                 .setParameter("pattern", "%" + texte + "%")
                 .getResultList();
     }
+
+    public List<Utilisateur> findByPrenom(String prenom) {
+        return em.createQuery("SELECT u FROM Utilisateur u WHERE u.prenom = :prenom", Utilisateur.class)
+                .setParameter("prenom", prenom)
+                .getResultList();
+    }
 }

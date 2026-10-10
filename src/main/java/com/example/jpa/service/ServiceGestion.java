@@ -48,4 +48,12 @@ public class ServiceGestion {
     public List<Utilisateur> utilisateursParSalle(String nomSalle) {
         return utilisateurDao.findBySalleNom(nomSalle);
     }
+
+    public List<Salle> sallesParBatiment(String batiment) {
+        return salleDao.findByBatiment(batiment);
+    }
+
+    public List<Utilisateur> utilisateursParPrenom(String prenom) {
+        return utilisateurDao.findByPrenom(prenom);
+    }
 }
